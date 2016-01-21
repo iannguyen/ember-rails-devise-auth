@@ -15,7 +15,7 @@ export default Session.extend({
   //     });
   //   }
   // }),
-  
+
   setCurrentUser: Ember.observer('isAuthenticated', function() {
     console.log('service working');
     if (this.get('isAuthenticated')) {
@@ -26,9 +26,6 @@ export default Session.extend({
       }).then((users) => {
         this.set('currentUser', users[0]);
       });
-
-      // this.set('currentUser');
-
     }
   }),
 });
